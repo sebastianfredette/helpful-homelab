@@ -113,7 +113,7 @@ class JellyfinSessionTerminator:
         now = datetime.now(timezone.utc)  # Use UTC time for consistency
         terminated_count = 0
 
-        logger.info(f"Current time (UTC): {now.isoformat()}")
+        # Removed the current time log
 
         for session in sessions:
             session_id = session.get('Id')
@@ -191,7 +191,7 @@ def main():
     logger.info(f"Starting Jellyfin session terminator")
     logger.info(f"Server: {args.server}")
     logger.info(f"Timeout: {args.timeout} minutes")
-    logger.info(f"Dry run: {'Yes' if args.dry_run else 'No'}")
+    # Removed the dry run status log
     
     terminated = terminator.process_sessions()
     
